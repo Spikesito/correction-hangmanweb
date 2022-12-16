@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./static/style.css">
+    <title>Home</title>
+</head>
+<body>
+    <section id="home">
+        <nav>
+            {{if .LevelSet}}
+            <a href="/game">Resume</a>
+            {{end}}
+            <a href="/credits">Credits</a>
+        </nav>
+        
+        {{if not .LevelSet}}
+        <h2> Merci de choisir une difficulté </h2>
+        <form action="/game" method="GET">
+            <button name="level" type="submit" value="0">Easy</button>
+            <button name="level" type="submit" value="1">Medium</button>
+            <button name="level" type="submit" value="2">Hard</button>
+        </form>
+        {{end}}
+
+    </section>
+</body>
+</html>
